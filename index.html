@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+
+<nav id="navbar">
+    <header>
+      <h2< CA BIJ S.7.1.1 Documentaion </h2>
+      <a class="nav-link" href="#Release_Information">
+        <p>Release Information</p>
+      </a>
+      <a class="nav-link" href= "#Installing_CA_Business_Intelligence_JasperReports_Server"> 
+      <p>Installing CA Business Intelligence JasperReports Server</p>
+      </a>
+      <a class="nav-link" href="#Upgrading_CA_Business_Intelligence_JasperReports_Server"> 
+      <p>Upgrading CA Business Intelligence JasperReports Server</p>
+      </a>
+      <a class="nav-link" href="#Administration"> 
+      <p>Administration</p>
+      </a>
+      <a class="nav-link" href="#Uninstalling_CA_Business_Intelligence_JasperReports_Server"> 
+      <p>Uninstalling CA Business Intelligence JasperReports Server</p>
+      </a>
+      
+    </header>
+  </nav>
+  
+  <main id="main-doc">
+  
+  <h1>CA BUSINESS INTELLIGENCE JASPERREPORTS® SERVER 7.1.1
+  </h1>
+  
+  <section class=main-section id="Release_Information">
+     <header>
+       <h2>Release Information
+       </h2>
+       
+    </header>
+       <p>
+         Last Updated October 1, 2019 </p>
+ <p>Installation - New enhancements include: </p>
+       <ul>
+<li>Supports TLS enabled database in CABI installation for Oracle (PKCS12 wallet) and MSSQL.</li>
+         <li>Default Postgres version is changed to 9.6 to fix security vulnerabilities.</li></p></ul>
+ <p>Administration - New enhancements include:</p> 
+<ul><li>SSO supports both token expiry and non-expiry features.</li></ul>
+<p>This release of CA Business Intelligence JasperReports® Server includes the following patch from TIBCO JasperServer:</p>
+  <ul>
+    <li>20190320_0239</li>
+    
+  </ul>
+         
+       </p>
+    
+  </section>
+  
+ 
+  <section class=main-section id="Installing_CA_Business_Intelligence_JasperReports_Server">
+    <header>
+      <h2>
+        Installing CA Business Intelligence JasperReports Server
+      </h2>
+      </header>
+      <p>
+        Last Updated October 1, 2019
+      </p>
+      <p>CA Business Intelligence JasperReports Server 7.1.1 provides installation through three different options as listed. Upgrade from previous <code>6x versions of CA Business Intelligence </code> is also supported through GUI and silent installation only. The following types of installation are as follows:</p>
+      <ul>
+        <li><p>GUI Installation</p>
+This installation method is supported for new installations only and on the OS types and versions presented in the chart. In addition to presenting an intuitive GUI-based install experience, this method provides the option to install bundled versions of Apache Tomcat and a database (PostgreSQL), components required by CA Business Intelligence. While the GUI installer bundles particular versions of Apache Tomcat and PostgreSQL, it is also flexible in its allowance for reference an existing preferred database (Microsoft SQL Server, Oracle, MySQL) or an existing preferred version of Tomcat (version 8).
+ Silent InstallationThe response file based installation provides a way to record or capture GUI-based installation selections into a file that can be referenced later for future silent or unattended installations.</li>
+        <li><p> Ant-based Installation</p>
+The silent installation is accomplished through executing a script that references a .properties file containing all necessary information that is required to install CA Business Intelligence (ex. Tomcat location, database connection info, etc.). The .properties file is configured by the enduser. As opposed to the GUI installer, you must provide an existing installed Apache Tomcat instance and an existing supported database. Refer to the prerequisites section for more information about preparing for a silent installation.</li>
+      </ul>
+  </section>
+  
+  <section class=main-section
+           id="Upgrading_CA_Business_Intelligence_JasperReports_Server">
+    <header>
+     <h2> Upgrading CA Business Intelligence JasperReports Server</h2>
+    </header>
+  <p>  Last Updated October 1, 2019
+    Contents</p> 
+   
+    <p>Prerequisites</p>
+<p>Upgrade CA Business Intelligence from <code>6.3 (ANT or silent installation), or 6.4.2, 6.4.3, 7.1.1 (GUI)</code>
+Upgrade CA Business Intelligence from <code>6.3 (GUI) or 6.4.2, 6.4.3 to 7.1.1 (GUI)</code>
+Verify Upgrade</p>
+ 
+<p>Prerequisites</p>
+<p>Back up your Jasperserver database:</p>
+    <ul>
+<li>Create a folder where you can save your jasperserver database
+For example, C:\JS_BACKUP or /opt/JS_BACKUP</li>
+<li>Run the following commands for PostgreSQL:
+<code>PostgreSQL:
+cd <path>/JS_BACKUP
+pg_dump --username=postgres jasperserver > js-db-dump.sql</code> </li>
+<li>Back up your JasperReports server war file:
+Create a folder where you can save your jasperserver-pro folder.
+For example,<code> C:\JS_BACKUP or /opt/JS_BACKUP
+Copy <tomcat>/webapps/jasperserver-pro to <path>/JS_BACKUP </code></li>
+<li>If you made modifications to the existing JasperReports Server application, you need to manually back up and restore configuration changes, like client-specific security classes or LDAP server configurations in your existing environment and integrate them with your upgraded environment.</li>
+<li>Ensure that Tomcat directory is closed before you upgrade CABI to avoid errors while upgrading.
+(Windows) Ensure that you review JasperReports known issues and update the timeout settings in jasperreports.properties file as needed to avoid timeout issues and upgrade errors.</li>
+  </ul>
+  </section>
+  
+  <section class=main-section id="Administration">
+    <header>
+      <h2>Administration</h2>
+    </header>
+   <p> Last Updated October 1, 2019</p>
+<p>This section provides you with information and procedures for configuring your Business Intelligence platform. Procedures are provided for common tasks. Conceptual information and technical details are provided for all advanced topics. For information on administrating this product, see TIBCO JasperReports Server Administration Guide.
+This section contains information about the following topics: 
+Import and Export
+Configuring High Availability (HA)
+Configuring LDAP Authentication
+Post Installation Utility
+Configuring SSL</p>
+  </section>
+  
+  <section class=main-section 
+           id="Uninstalling_CA_Business_Intelligence_JasperReports_Server">
+    <header>
+      <h2>Uninstalling CA Business Intelligence JasperReports Server</h2>
+    </header>
+    <p>Last Updated October 1, 2019</p>
+<p>There are three types of uninstallation procedures, based on the selected installation. This section contains: 
+GUI Uninstallation
+      Silent Uninstallation</p>
+    
+  </section>
+  
+  </main>
+</html>
